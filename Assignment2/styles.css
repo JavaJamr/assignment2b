@@ -1,0 +1,9 @@
+/* Reset Browser Styling Do This Every Time the star means all things before and after*/
+*, *::before, *::after{
+box-sizing: border-box;
+padding: 0;
+margin: 0;
+}
+body{
+    background-color: aliceblue;
+}

@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biometric Panel</title>
+    <!--Css and java link-->
+    <link rel="stylesheet" href="styles.css">
+    <!--One option in the head, or in the body. if its in the head its slower than if its in the body. UNLESS you use defer in the head-->
+    <script src="app.js" defer></script>
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="header-class">
+        <h1>Biodome Operations Panel</h1>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- Plant Biometric Input Panel -->
+        <section class="input-panel">
+
+            <h2>Record Plant Biometric Measurements</h2>
+
+            <form id="plant-card-form">
+
+                <!-- Plant Name -->
+                <div class="form-field">
+                    <label for="plant-name">Name Of Plant Being Logged</label>
+
+                    <input
+                        id="plant-name"
+                        type="text"
+                        placeholder="Aconitum Napellus"
+                        required
+                    >
+                </div>
+
+                <!-- Soil pH -->
+                <div class="form-field">
+                    <label for="ph">Current Soil pH</label>
+
+                    <input
+                        id="ph"
+                        type="number"
+                        min="0"
+                        max="14"
+                        step="0.1"
+                        placeholder="7.8"
+                        required
+                    >
+
+                    <p class="form-hint">Valid range: 0–14</p>
+
+                    <!-- Dynamically populated validation error -->
+                    <p class="field-error" id="ph-error"></p>
+                </div>
+
+                <!-- Electrical Conductivity -->
+                <div class="form-field">
+                    <label for="ec">
+                        Electrical Conductivity (mS/cm)
+                    </label>
+
+                    <input
+                        id="ec"
+                        type="number"
+                        min="0"
+                        step="0.1"
+                        placeholder="3"
+                        required
+                    >
+
+                    <p class="form-hint">EC must be greater than 0</p>
+
+                    <!-- Dynamically populated validation error -->
+                    <p class="field-error" id="ec-error"></p>
+                </div>
+
+                <!-- Temperature -->
+                <div class="form-field">
+                    <label for="temperature">Temperature (°F)</label>
+
+                    <input
+                        id="temperature"
+                        type="number"
+                        step="0.1"
+                        placeholder="70"
+                        required
+                    >
+
+                    <p class="form-hint">Temperatures are recorded in Fahrenheit</p>
+
+                    <!-- Dynamically populated validation error -->
+                    <p class="field-error" id="temperature-error"></p>
+                </div>
+
+                <!-- Relative Humidity -->
+                <div class="form-field">
+                    <label for="humidity">Relative Humidity (%)</label>
+
+                    <input
+                        id="humidity"
+                        type="number"
+                        min="0"
+                        max="100"
+                        step="0.1"
+                        required
+                    >
+
+                    <p class="form-hint"> Must fall between 0 and 100%</p>
+
+                    <!-- Dynamically populated validation error -->
+                    <p class="field-error" id="humidity-error"></p>
+                </div>
+
+                <button id="btn-record" type="submit" class="btn">Record Reading</button>
+
+            </form>
+
+        </section>
+
+        <!-- Active Plant Entries Portal -->
+        <section class="portal-section">
+
+            <!-- Portal Header -->
+            <div class="portal-header-section">
+
+                <span>
+                    <!-- Dynamically updated number of recorded entries -->
+                    <p id="log-item-count">0 recorded entries</p>
+                    <h2>Active Entries</h2>
+                </span>
+
+                <button id="btn-clear-all" type="button" class="btn">Clear All Logs</button>
+
+            </div>
+
+            <!-- Portal Content -->
+            <div class="portal-panel">
+
+                <!-- JavaScript dynamically populates this list -->
+                <ul id="dynamic-portal-list"></ul>
+
+            </div>
+
+        </section>
+
+        <!-- Static Instructions Portal -->
+        <section class="static-portal-section">
+
+            <div class="circular-border">
+                <p>🌳</p>
+            </div>
+
+            <ol>
+                <li>Enter the plant's name.</li>
+                <li>Record the current soil pH.</li>
+                <li>Record the electrical conductivity.</li>
+                <li>Record the temperature in Fahrenheit.</li>
+                <li>Record the relative humidity percentage.</li>
+                <li>Click Record Reading to save the measurement.</li>
+                <li>Use Delete to remove an individual entry.</li>
+                <li>Use Clear All Logs to remove all recorded entries.</li>
+            </ol>
+
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer-class">
+        <p>&copy; 2026 Biodome Operations Panel. Created by Garrett Ryan.</p>
+    </footer>
+
+</body>
+</html>
