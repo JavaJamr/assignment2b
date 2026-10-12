@@ -1,9 +1,89 @@
-/* Reset Browser Styling Do This Every Time the star means all things before and after*/
-*, *::before, *::after{
-box-sizing: border-box;
-padding: 0;
-margin: 0;
+/*Initial Set Up*/
+    :root{
+        --font-family: -apple-systems, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+        --transition-speed:.2;
+        --forest-green:#28462B;
+        --light-forest-green:#395724;
+        --primary-text: #fff;
+        --muted-text: #a9a7a7;
+        --border-color:#1B1E1A;
+        --form-box-color:#365a1c;
+
 }
+    *, *::before, *::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+
+/*Universal Default*/
 body{
-    background-color: aliceblue;
+    scroll-behavior: smooth;
+        font-family: var(--font-family);
+        background:var(--forest-green);
+        color: var(--primary-text); /*Saves repeated calls to change text color by having a default*/
+        /*Text Font Color*/
+        line-height: 1.6;
+}
+.main-class{
+    display: flex; 
+    position: sticky;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+/*Header*/
+.header-class{
+    display: flex;
+    justify-content: center;
+    border: 1px solid var(--border-color);
+}
+
+/*Form*/
+.input-panel{
+    background-color:var(--light-forest-green);
+}
+.form-field{
+    background-color: var(--form-box-color);
+}
+.form-input{
+    background-color: var(--form-box-color);
+}
+.field-error{
+    color: rgb(255, 0, 0);
+}
+
+/*Portal Section*/
+.portal-section{
+    background-color:var(--light-forest-green);
+}
+.static-portal-section{
+    background-color:var(--light-forest-green);
+}
+.circular-border{
+    display: flex;
+    margin:3rem 10rem;
+    padding: auto;
+    justify-content: center;
+    align-items: center;
+    align-content: center;
+    border: 1px solid var(--border-color);
+    border-radius: 100%;
+    background-color:var(--light-forest-green);
+}
+
+/*footer*/
+.footer-class{
+    display: flex;
+    margin: 2rem 0 0 0;
+    justify-content: left;
+    border: 1px solid var(--border-color);
+    color:var(--muted-text);
+}
+
+/*Buttons*/
+.btn{
+
 }
