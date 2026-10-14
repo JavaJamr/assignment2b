@@ -28,8 +28,6 @@ body{
 }
 .main-class{
     display: flex; 
-    position: sticky;
-    display: inline-flex;
     align-items: center;
     justify-content: space-evenly;
 }
@@ -38,15 +36,28 @@ body{
 .header-class{
     display: flex;
     justify-content: center;
-    border: 1px solid var(--border-color);
+    border: 3px solid var(--border-color);
+    margin: 0 0 3rem 0;
 }
-
+.sub-header-class{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 5rem 0;
+}
 /*Form*/
 .input-panel{
+    border: 2px solid var(--border-color);
     background-color:var(--light-forest-green);
+    padding: 5% 10%;
 }
 .form-field{
-    background-color: var(--form-box-color);
+    display: flex;
+    flex-direction: column;
+    background-color: var(--light-forest-green);
+}
+.form-hint{
+    color: var(--muted-text);
+    font-size: .75rem;
 }
 .form-input{
     background-color: var(--form-box-color);
@@ -57,14 +68,18 @@ body{
 
 /*Portal Section*/
 .portal-section{
+    border: 2px solid var(--border-color);
+    padding: 5% 10%;
     background-color:var(--light-forest-green);
 }
 .static-portal-section{
+    border: 2px solid var(--border-color);
+    padding: 5% 10%;
     background-color:var(--light-forest-green);
 }
 .circular-border{
     display: flex;
-    margin:3rem 10rem;
+    margin: 3rem 10rem;
     padding: auto;
     justify-content: center;
     align-items: center;
@@ -76,11 +91,22 @@ body{
 
 /*footer*/
 .footer-class{
-    display: flex;
-    margin: 2rem 0 0 0;
+    /*Inline flex and set to bottom of page*/
+    display: inline-flex; 
+    position: fixed;
+
+    bottom: 0;
     justify-content: left;
+  
+
+
+    width: 100%; /*Fills enitre screen*/
     border: 1px solid var(--border-color);
     color:var(--muted-text);
+    
+    flex-shrink: auto;
+    z-index: 1000; /*Z axis is important for layering*/
+    
 }
 
 /*Buttons*/
