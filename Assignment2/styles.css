@@ -9,6 +9,9 @@
         --border-color:#1B1E1A;
         --form-box-color:#365a1c;
 
+        --button-hover:#589a5d;
+        --button-background:#3b6640;
+
 }
     *, *::before, *::after{
     box-sizing: border-box;
@@ -42,13 +45,19 @@ body{
 .sub-header-class{
     display: flex;
     justify-content: center;
-    margin: 0 0 5rem 0;
+    margin: 0 0 3rem 0;
+}
+.portal-header-section{
+    display: flex;
+    justify-content: center;
+    margin: 0 0 3rem 0;
 }
 /*Form*/
 .input-panel{
     border: 2px solid var(--border-color);
     background-color:var(--light-forest-green);
-    padding: 5% 10%;
+    padding: 3rem 5rem 3rem 5rem;
+    min-height: 50%;
 }
 .form-field{
     display: flex;
@@ -61,20 +70,25 @@ body{
 }
 .form-input{
     background-color: var(--form-box-color);
+    height: 2rem;
 }
 .field-error{
     color: rgb(255, 0, 0);
 }
-
+.hidden {
+  display: none !important;
+}
 /*Portal Section*/
 .portal-section{
+    padding: 9.9 rem 7em 10rem 7rem;
+    min-height: 50%;
     border: 2px solid var(--border-color);
-    padding: 5% 10%;
     background-color:var(--light-forest-green);
 }
 .static-portal-section{
+    padding: 9.9rem 7rem 10rem 7rem;
+    min-height: 50%;
     border: 2px solid var(--border-color);
-    padding: 5% 10%;
     background-color:var(--light-forest-green);
 }
 .circular-border{
@@ -110,6 +124,70 @@ body{
 }
 
 /*Buttons*/
-.btn{
+    .btn{
+        background-color: var(--button);
+        display: inline-flex;
+        color:var(--primary-text);
+        margin:3rem 20% 0rem 25%; 
+        padding:1rem 3rem; 
+        font-size: 1rem;
+        font-weight: 600; /*Bold is weight*/    
+        text-decoration: none; /*Removes default styling*/
+        border-radius: 15%; /*Curvyness*/
+        border: 1px solid;
+        border-color: transparent; /*Transparent is not visible border yet*/
+        cursor: pointer;
+
+        background-color: var(--button-background);
+
+        transition: background-color var(--transition-speed), transform var(--transition-speed),border-color var(--border-color); 
+    }
+ 
+    .btn:hover{
+        color:var(--primary-text);
+        display: inline-flex;
+        background-color: var(--button-hover);
+        border:1px solid var(--primary-text);
+        transform: translateY(-1px);
+    }
+@media(max-width: 960px){/*Stops right before horizontal view*/
+    .main-class{
+        display: flex; 
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .portal-section{
+        padding: 9.9rem 6em 8rem 6rem;
+        min-height: 50%;
+    }
+    .static-portal-section{
+        padding: 9.9rem 6rem 8rem 6rem;
+        min-height: 50%;
+
+    }
+}
+
+@media (max-width:768px){
+    .main-class{
+        display: flex; 
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-evenly;
+    }
+    .portal-section{
+        padding: 9.9rem 4em 8rem 4rem;
+        min-height: 50%;
+    }
+    .static-portal-section{
+        padding: 9.9rem 4rem 8rem 4rem;
+        min-height: 50%;
+
+    }
+    .input-panel{
+        border: 2px solid var(--border-color);
+        background-color:var(--light-forest-green);
+        padding: 2rem 3rem 2rem 3rem;
+    }
 
 }
