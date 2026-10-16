@@ -122,7 +122,19 @@ body{
     z-index: 1000; /*Z axis is important for layering*/
     
 }
+/*Dynamic Cards*/
+.plant-card{
 
+}
+.plant-name-text{
+
+}
+.plant-biometric-stats{
+        
+}
+.stat-item{
+
+}
 /*Buttons*/
     .btn{
         background-color: var(--button);
@@ -150,6 +162,10 @@ body{
         border:1px solid var(--primary-text);
         transform: translateY(-1px);
     }
+    .btn-delete{
+
+    }
+
 @media(max-width: 960px){/*Stops right before horizontal view*/
     .main-class{
         display: flex; 
